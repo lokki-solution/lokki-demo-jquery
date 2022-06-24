@@ -1,8 +1,10 @@
 var qrToken = "";
+var apiUrl = "http://107.161.26.3/"
+var apiLocalUrl = "http://localhost:3000/"
 $('.btn-login').click(() => {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/qr/generate',
+        url: apiUrl + 'qr/generate',
         contentType: "application/json",
         data: JSON.stringify({
             userId: "111"
@@ -17,7 +19,7 @@ $('.btn-login').click(() => {
 $('.btn-scan-qrcode').click(() => {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/qr/scan',
+        url: apiUrl + 'qr/scan',
         contentType: "application/json",
         data: JSON.stringify({
             token: qrToken
